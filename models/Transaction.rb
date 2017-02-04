@@ -37,10 +37,17 @@ class Transaction
       WHERE id='#{options['id']}'")
     SqlRunner.run(sql)
   end
-  
+
   def self.delete(id)
     sql = "DELETE FROM transactions
-            WHERE id = #{id}"
+           WHERE id = #{id}"
             SqlRunner.run(sql)
+  end
+
+  def self.total_spend
+    sql = ("SELECT
+           SUM(transaction_amount) 
+           FROM transactions;")
+    SqlRunner.run(sql)[0]["sum"].to_f
   end
 end
