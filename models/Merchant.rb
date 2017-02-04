@@ -15,23 +15,25 @@ class Merchant
   end
 
   def self.delete(id)
-    sql = "DELETE FROM merchants WHERE id=#{id}"
-        SqlRunner.run( sql )
+    sql = "DELETE   
+           FROM merchants 
+           WHERE id=#{id}"
+    SqlRunner.run( sql )
   end
 
   def self.update(options)
-    sql = ("UPDATE merchants SET
-      merchant_name='#{options['merchant_name']}'
-      WHERE id='#{options['id']}'")
+    sql = ("UPDATE merchants 
+            SET merchant_name='#{options['merchant_name']}'
+            WHERE id='#{options['id']}'")
     SqlRunner.run(sql)
   end
-
 
   def self.all()
     sql = ("SELECT * 
             FROM merchants;")
     SqlRunner.run(sql).map{|merchant| Merchant.new(merchant)}
   end
+
   def self.find(id)
     sql = ("SELECT *
             FROM merchants
