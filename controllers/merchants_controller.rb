@@ -24,3 +24,13 @@ get "/merchants/:id" do
   @merchant = Merchant.find(params[:id])
   erb :"merchants/show"
 end
+
+get '/merchants/:id/edit' do
+  @merchant = Merchant.find(params[:id])
+  erb :"merchants/edit"
+end
+
+post "/merchants/:id" do
+  @merchant = Merchant.update(params)
+  redirect to ("/merchants/#{params[:id]}")
+end
