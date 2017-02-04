@@ -1,7 +1,8 @@
 require_relative '../db/sql_runner'
 
 class Transaction
-  attr_reader :id, :merchant_id,:tag_id, :transaction_amount, :item_description
+  attr_accessor :merchant_id, :tag_id, :transaction_amount, :item_description
+  attr_reader :id
   def initialize(options)
     @id = options['id'].to_i
     @merchant_id = options['merchant_id'].to_i
@@ -22,5 +23,9 @@ class Transaction
     sql = ("SELECT * FROM transactions")
     SqlRunner.run(sql).map { |transaction| Transaction.new(transaction)  }
   end
-  
+  def self.find(id)
+    sql = ("SELECT * FROM transactions
+            WHERE id = #{id}")
+    SqlRunner.run(sql)[0]
+  end
 end
