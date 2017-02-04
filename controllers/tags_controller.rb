@@ -24,6 +24,11 @@ get '/tags/:id/edit' do
   erb :"tags/edit"
 end
 
+post "/tags/:id" do
+  @tag = Tag.update(params)
+  redirect to ("/tags/#{params[:id]}")
+end
+
 post '/tags/new' do
   @tag = Tag.new(params)
   @tag.save
