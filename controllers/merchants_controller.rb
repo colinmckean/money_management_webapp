@@ -19,3 +19,8 @@ post '/merchants/new' do
   @merchant.save
   redirect to("/merchants/all")
 end
+
+get "/merchants/:id" do
+  @merchant = Merchant.find(params[:id])
+  erb :"merchants/show"
+end
