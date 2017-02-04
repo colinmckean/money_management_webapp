@@ -25,7 +25,7 @@ class Transaction
   def self.find(id)
     sql = ("SELECT * FROM transactions
       WHERE id = #{id}")
-    SqlRunner.run(sql)[0]
+    Transaction.new(SqlRunner.run(sql)[0])
   end
 
   def self.update(options)
