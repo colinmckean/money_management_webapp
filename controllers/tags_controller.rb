@@ -19,6 +19,11 @@ get "/tags/:id" do
   erb :"tags/show"
 end
 
+get '/tags/:id/edit' do
+  @tag = Tag.find(params[:id])
+  erb :"tags/edit"
+end
+
 post '/tags/new' do
   @tag = Tag.new(params)
   @tag.save
