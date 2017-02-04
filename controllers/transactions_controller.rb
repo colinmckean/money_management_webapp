@@ -13,3 +13,10 @@ end
 get '/transactions/new' do
   erb :"transactions/new"
 end
+
+post '/transactions/new' do
+  @transaction = Transaction.new(params)
+  @transaction.save
+  redirect to("/transactions/all")
+end
+
