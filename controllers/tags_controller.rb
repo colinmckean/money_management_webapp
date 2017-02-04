@@ -19,3 +19,9 @@ get "/tags/:id" do
   erb :"tags/show"
 end
 
+post '/tags/new' do
+  @tag = Tag.new(params)
+  @tag.save
+  redirect to("/tags/all")
+end
+
