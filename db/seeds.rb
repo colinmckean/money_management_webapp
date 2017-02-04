@@ -1,5 +1,6 @@
 require_relative '../models/Tag'
 require_relative '../models/Merchant'
+require_relative '../models/Transaction'
 require 'pry-byebug'
 
 tag_1 = Tag.new({
@@ -51,6 +52,43 @@ tag_2.save()
 tag_3.save()
 tag_4.save()
 tag_5.save()
+
+transaction_1 = Transaction.new({
+  "merchant_id"=> "1",
+  "tag_id" => "1",
+  "transaction_amount" => "21.11",
+  "item_description" => "bought dinner for friends"
+  })
+transaction_2 = Transaction.new({
+  "merchant_id"=> "1",
+  "tag_id" => "2",
+  "transaction_amount" => "2.99",
+  "item_description" => "bought new shirt"
+  })
+transaction_3 = Transaction.new({
+  "merchant_id"=> "3",
+  "tag_id" => "1",
+  "transaction_amount" => "13.59",
+  "item_description" => "bought drinks for everyone"
+  })
+transaction_4 = Transaction.new({
+  "merchant_id"=> "2",
+  "tag_id" => "4",
+  "transaction_amount" => "10.50",
+  "item_description" => "filled tank"
+  })
+transaction_5 = Transaction.new({
+  "merchant_id"=> "1",
+  "tag_id" => "5",
+  "transaction_amount" => "20.35",
+  "item_description" => "bought helicopter"
+  })
+
+transaction_1.save
+transaction_2.save
+transaction_3.save
+transaction_4.save
+transaction_5.save
 
 binding.pry
 
