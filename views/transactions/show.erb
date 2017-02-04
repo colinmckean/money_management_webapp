@@ -1,0 +1,12 @@
+<h1>transaction Details</h1>
+<div class="container">
+<p>transaction id: <%= @transaction.id %></p>
+<p>tag id: <%= @transaction.tag_id %></p>
+<p>merchant id: <%= @transaction.merchant_id %></p>
+<p>Amount: <%= @transaction.transaction_amount %></p>
+<p>description: <%= @transaction.item_description %></p>
+<p class="button"><a href="/transactions/<%= @transaction.id%>/edit">EDIT</a></p>
+<form action="/transactions/<%=@transaction.id%>/delete" method="post">
+<button class="delete button" type="submit" value="DELETE">DELETE</button>
+</form>
+</div>
