@@ -25,6 +25,11 @@ post '/transactions/:id' do
   redirect to ("/transactions/#{params[:id]}")
 end
 
+post '/transactions/:id/delete' do
+    Transaction.delete(params[:id])
+    redirect to('/transactions/all')
+end
+
 get '/transactions/new' do
   erb :"transactions/new"
 end
