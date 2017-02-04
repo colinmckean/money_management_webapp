@@ -25,3 +25,7 @@ post '/tags/new' do
   redirect to("/tags/all")
 end
 
+post "/tags/:id/delete" do
+  Tag.delete(params[:id])
+  redirect to('/tags/all')
+end
