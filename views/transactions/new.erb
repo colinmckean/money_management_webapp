@@ -1,0 +1,24 @@
+<h1>NEW Transaction</h1>
+<div class="container">
+<form action="/transactions/new" method="post">
+  <label>
+    amount:
+  <input type="text" name="transaction_amount">
+  </label>
+  <label>
+    details:
+  <input type="text" name="item_description">
+  </label>
+  <label>
+    Select a tag
+  <select name="tag_id">
+    <option value="1">1</option>
+    <option value="2">2</option>
+  </select>  
+  <select name="merchant_id">
+    <option value="1">1</option>
+    <option value="2">2</option>
+  </select>
+  </label>
+  <button class="button" type="submit" value="new transactions">SUBMIT</button>
+  </form>
