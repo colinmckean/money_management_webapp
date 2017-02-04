@@ -1,3 +1,4 @@
+require_relative '../db/sql_runner'
 class Tag
   attr_reader :id, :tag_name
   def initialize(options)
@@ -9,17 +10,17 @@ class Tag
     sql = ("INSERT INTO tags(tag_name)
             VALUES ('#{@tag_name}')
             RETURNING id;")
-    @id = SqlRunner(sql)
+    @id = SqlRunner.run(sql)
   end
 
   def self.all()
     sql = ("SELECT * FROM tags;")
-    SqlRunner(sql).map {|tag|Tag.new(tag)}
+    SqlRunner.run(sql).map {|tag|Tag.new(tag)}
   end
 
   def self.find(id)
     sql = ("SELECT * FROM tags
             WHERE id = '#{id}';")
-    SqlRunner(sql)[0]
+    SqlRunner.run(sql)[0]
   end
 end
