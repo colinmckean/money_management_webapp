@@ -1,0 +1,8 @@
+<h1>Tag Details</h1>
+<div class="container">
+<p>Tag name: <%= @tag.tag_name %></p>
+<p class="button"><a href="/tags/<%= @tag.id%>/edit">EDIT</a></p>
+<form action="/tags/<%=@tag.id%>/delete" method="post">
+<button class="delete button" type="submit" value="DELETE">DELETE</button>
+</form>
+</div>
