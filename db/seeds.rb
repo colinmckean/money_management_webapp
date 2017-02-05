@@ -40,18 +40,18 @@ merchant_6 = Merchant.new({
   'merchant_name' => 'Burton'
   })
 
-merchant_1.save
-merchant_2.save
-merchant_3.save
-merchant_4.save
-merchant_5.save
-merchant_6.save
+# merchant_1.save
+# merchant_2.save
+# merchant_3.save
+# merchant_4.save
+# merchant_5.save
+# merchant_6.save
 
-tag_1.save()
-tag_2.save()
-tag_3.save()
-tag_4.save()
-tag_5.save()
+# tag_1.save()
+# tag_2.save()
+# tag_3.save()
+# tag_4.save()
+# tag_5.save()
 
 transaction_1 = Transaction.new({
   "merchant_id"=> "1",
@@ -84,11 +84,11 @@ transaction_5 = Transaction.new({
   "item_description" => "bought helicopter"
   })
 
-transaction_1.save
-transaction_2.save
-transaction_3.save
-transaction_4.save
-transaction_5.save
+# transaction_1.save
+# transaction_2.save
+# transaction_3.save
+# transaction_4.save
+# transaction_5.save
 
 binding.pry
 
