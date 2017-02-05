@@ -1,4 +1,7 @@
 <h1>List all Transactions.</h1>
+<div>
+  Total Spend: <%= @total_spend %>
+</div>
 <div class="container">
  <% for transaction in @transactions %>
  <a href="/transactions/<%= transaction.id%>">
