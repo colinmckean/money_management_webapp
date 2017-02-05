@@ -1,10 +1,10 @@
-<h1>transaction Details</h1>
+<h1>Transaction Details</h1>
 <div class="container">
-<p>transaction id: <%= @transaction.id %></p>
-<p>tag id: <%= @transaction.tag_id %></p>
-<p>merchant id: <%= @transaction.merchant_id %></p>
-<p>Amount: <%= @transaction.transaction_amount %></p>
-<p>description: <%= @transaction.item_description %></p>
+<p>transaction id: <%= @more_details.id %></p>
+<p>tag id: <%= @more_details.tag_name %></p>
+<p>merchant id: <%= @more_details.merchant_name %></p>
+<p>Amount: <%= @more_details.transaction_amount %></p>
+<p>description: <%= @more_details.item_description %></p>
 <p class="button"><a href="/transactions/<%= @transaction.id%>/edit">EDIT</a></p>
 <form action="/transactions/<%=@transaction.id%>/delete" method="post">
 <button class="delete button" type="submit" value="DELETE">DELETE</button>
