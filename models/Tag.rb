@@ -7,10 +7,19 @@ class Tag
   end
 
   def save()
-    sql = ("INSERT INTO tags(tag_name)
+    sql = ("INSERT 
+            INTO tags(tag_name)
             VALUES ('#{@tag_name}')
             RETURNING id;")
     @id = SqlRunner.run(sql)
+  end
+
+  def self.total_spend(id)
+    sql = ("SELECT
+           SUM(transaction_amount) 
+           FROM transactions
+           WHERE tag_id = '#{id}';")
+    SqlRunner.run(sql)[0]["sum"].to_f
   end
   
   def self.update(options)
@@ -21,7 +30,9 @@ class Tag
   end
 
   def self.delete(id)
-    sql = "DELETE FROM tags WHERE id=#{id}"
+    sql = "DELETE 
+           FROM tags 
+           WHERE id=#{id}"
         SqlRunner.run( sql )
   end
 
