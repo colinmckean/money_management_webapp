@@ -12,13 +12,18 @@
   <label>
     Select a tag
   <select name="tag_id">
-    <option value="1">1</option>
-    <option value="2">2</option>
-  </select>  
+  <% for tag in @tags %>
+    <option value="<%= tag.id%>"><%= tag.tag_name%></option>
+    <% end %>
+  </select> 
+  </label> 
+  <label>
+  select a merchant
   <select name="merchant_id">
-    <option value="1">1</option>
-    <option value="2">2</option>
+  <% for merchant in @merchants %>
+    <option value="<%= merchant.id%>"><%= merchant.merchant_name%></option>
+    <% end %>
   </select>
   </label>
-  <button class="button" type="submit" value="new transactions">SUBMIT</button>
+  <button class="button" type="submit" value="something">SUBMIT</button>
   </form>
