@@ -21,6 +21,7 @@ post '/merchants/new' do
 end
 
 get "/merchants/:id" do
+  @total_spend = Merchant.total_spend(params[:id])
   @merchant = Merchant.find(params[:id])
   erb :"merchants/show"
 end
