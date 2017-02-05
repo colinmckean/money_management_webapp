@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner'
+require_relative './TransactionDetail'
 
 class Transaction
   attr_reader :id,:merchant_id, :tag_id, :transaction_amount, :item_description
@@ -24,7 +25,7 @@ class Transaction
 
   def self.find(id)
     sql = ("SELECT * FROM transactions
-      WHERE id = #{id}")
+      WHERE id = '#{id}'")
     Transaction.new(SqlRunner.run(sql)[0])
   end
 
@@ -49,5 +50,16 @@ class Transaction
            SUM(transaction_amount) 
            FROM transactions;")
     SqlRunner.run(sql)[0]["sum"].to_f
+  end
+
+  def self.more_details(id)
+    sql = "SELECT trans.id, trans.transaction_amount, trans.item_description, m.merchant_name, t.tag_name
+    FROM transactions trans
+    INNER JOIN merchants m
+    ON m.id = trans.merchant_id
+    INNER JOIN tags t
+    ON t.id = trans.tag_id
+    WHERE trans.id ='#{id}'";
+    TransactionDetail.new(SqlRunner.run(sql)[0])
   end
 end
