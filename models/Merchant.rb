@@ -14,6 +14,14 @@ class Merchant
     @id = SqlRunner.run(sql)
   end
 
+  def self.total_spend(id)
+    sql = ("SELECT
+           SUM(transaction_amount) 
+           FROM transactions
+           WHERE merchant_id = '#{id}';")
+    SqlRunner.run(sql)[0]["sum"].to_f
+  end
+
   def self.delete(id)
     sql = "DELETE   
            FROM merchants 
