@@ -10,6 +10,10 @@ get '/transactions/all' do
   erb :"/transactions/index"
 end
 
+get '/transactions/new' do
+ erb :"transactions/new"
+end
+
 get "/transactions/:id" do
   @transaction = Transaction.find(params[:id])
   erb :"transactions/show"
@@ -29,14 +33,3 @@ post '/transactions/:id/delete' do
     Transaction.delete(params[:id])
     redirect to('/transactions/all')
 end
-
-get '/transactions/new' do
-  erb :"transactions/new"
-end
-
-post '/transactions/new' do
-  @transaction = Transaction.new(params)
-  @transaction.save
-  redirect to("/transactions/all")
-end
-
