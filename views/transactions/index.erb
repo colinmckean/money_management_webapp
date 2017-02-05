@@ -1,9 +1,11 @@
 <h1>List all Transactions.</h1>
 <div class="container">
  <% for transaction in @transactions %>
+ <a href="/transactions/<%= transaction.id%>">
  <div class="cell">
  <p>ID: <%= transaction.id %></p>
  <p>transaction Amount: <%= transaction.transaction_amount %></p>
  </div>
+ </a>
 <%end%>
 </div>
