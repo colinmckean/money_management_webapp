@@ -14,7 +14,14 @@ get '/tags/new' do
   erb :"tags/new"
 end
 
+post '/tags/new' do
+  @tag = Tag.new(params)
+  @tag.save
+  redirect to("/tags/all")
+end
+
 get "/tags/:id" do
+  @total_spend = Tag.total_spend(params[:id])
   @tag = Tag.find(params[:id])
   erb :"tags/show"
 end
@@ -27,12 +34,6 @@ end
 post "/tags/:id" do
   @tag = Tag.update(params)
   redirect to ("/tags/#{params[:id]}")
-end
-
-post '/tags/new' do
-  @tag = Tag.new(params)
-  @tag.save
-  redirect to("/tags/all")
 end
 
 post "/tags/:id/delete" do
