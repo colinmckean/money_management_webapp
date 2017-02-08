@@ -25,14 +25,14 @@ class Merchant
   def self.delete(id)
     sql = "DELETE   
            FROM merchants 
-           WHERE id=#{id}"
+           WHERE id=#{id};"
     SqlRunner.run( sql )
   end
 
   def self.update(options)
     sql = ("UPDATE merchants 
             SET merchant_name='#{options['merchant_name']}'
-            WHERE id='#{options['id']}'")
+            WHERE id='#{options['id']}';")
     SqlRunner.run(sql)
   end
 
