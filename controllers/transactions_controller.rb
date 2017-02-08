@@ -11,11 +11,18 @@ get '/transactions/all' do
   erb :"/transactions/index"
 end
 
+post '/transactions/' do
+  @transactions = Transaction.by_month(params[:month],params[:year])
+  @total_by_month = Transaction.total_by_month(params[:month], params[:year])
+  erb :"transactions/index"
+end
+
 get '/transactions/new' do
   @tags = Tag.all
   @merchants = Merchant.all
  erb :"transactions/new"
 end
+
 
 post '/transactions/new' do
   @transaction = Transaction.new(params)
