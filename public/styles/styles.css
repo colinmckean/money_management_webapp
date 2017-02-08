@@ -1,0 +1,269 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+}
+footer{
+  padding: 10px;
+}
+.month_spend{
+  text-align: center;
+}
+h1{
+  text-align: center;
+  padding: 10px;
+}
+.logo{
+  background: #2E3D4F;
+  margin: 0 auto;
+  padding: 0;
+}
+img{
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  align-self: center;
+  display: flex;
+}
+a {
+  text-decoration: none;
+}
+li{
+  list-style: none;
+  padding: 25px;
+  border: 1px solid #2E3D4F;
+  background: #ff7473;
+}
+.total_spend{
+  display: block !important;
+  width: 100% !important;
+}
+
+.form {
+  display: flex;
+  margin-bottom: 1.5em;
+  align-content: center;
+}
+
+.form-field {
+  flex: 1;
+}
+
+.form-item {
+  background-color: rgba(147, 128, 108, 0.1);
+  color: #666666;
+  font: inherit;
+  font-weight: normal;
+  width: 20%;
+}
+
+.form-field,
+.form-item {
+  border: 1px solid rgba(147, 128, 108, 0.25);
+  padding: 0.5em 0.75em;
+}
+.container{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  height: 92vh;
+}
+.add_new{
+  order:1;
+}
+.new_transaction_link{
+  background-color: #987284;
+}
+.all_tags_link{
+  background-color: #75B9BE;
+}
+.all_transactions_link{
+  background-color: #D0D6B5;
+}
+.all_merchants_link{
+  background-color: #F9B5AC;
+}
+
+ul{
+  display: flex;
+  font-family: 'Bahiana', cursive;
+}
+
+.delete_button{
+  background-color: red;
+}
+.edit_button{
+  background-color: #66C3FF;
+  text-align: center;
+}
+.update{
+  background-color: #5CBDD9;
+}
+
+.submit_button {
+  background-color: #4CAF50;
+}
+
+/*tablet*/
+@media all and (max-width: 720px){
+  ul{
+    flex-direction: column;
+  }
+  a , a:visited, a:hover,a:active{
+    color: #2E3D4F;
+  }
+  .cell{
+    height: 20vh;
+    text-align: center;
+    font-size: 2rem;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  .add_new{
+    background-color: #78AB46;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid black;
+  }
+  .button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 100%;
+  }
+
+}
+
+/*desktop*/
+@media all and (min-width: 720px){
+  ul{
+    flex-direction: column;
+  }
+  .container{
+    width: 50%;
+    margin: 0 auto;
+  }
+  a , a:visited, a:hover,a:active{
+    color: #2E3D4F;
+  }
+  body{
+    background-image: url("/img/background.jpg");
+  }
+  .add_new{
+    background-color: #78AB46;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid black;
+  }
+  form{
+    padding: 10px;
+    background-color: white;
+  }
+  input{
+    font-size: 20px;
+  }
+  select, .new_trans{
+    text-align: center;
+    background-color: white;
+    font-size: 20px;
+  }
+  p{
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid black;
+  }
+  .master{
+    display: flex;
+    flex-direction: row;
+    max-width: 90vw;
+    margin: 0 auto; 
+    background-color: #2E3D4F;
+  }
+  .logo{
+    display: inline-block;
+    max-width: 20%;
+
+  }
+  h1{
+    color: white;
+  }
+  nav{
+    align-self: center;
+    max-width: 80%;
+  }
+  ul{
+    align-self: flex-start;
+    flex-direction: row;
+  }
+  li{
+    height: 1vh;
+  }
+  a , a:visited, a:hover,a:active{
+    color: #2E3D4F;
+  }
+  .button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+/*phone*/
+@media all and (max-width: 480px) {
+  ul{
+    flex-direction: column;
+    text-align: center;
+    font-size: 150%;
+  }
+
+  li{
+    height: 10vh;
+  }
+
+  a , a:visited, a:hover,a:active{
+    color: #2E3D4F;
+  }
+  .
+  add_new{
+    background-color: #78AB46;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid black;
+  }
+
+  .add_new a{
+    color: black;
+  }
+  .container{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: 92vh;
+  }
+  .cell{
+    height: 20vh;
+    text-align: center;
+    font-size: 2rem;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  .button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 100vw;
+  }
+}
