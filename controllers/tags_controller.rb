@@ -23,6 +23,7 @@ end
 get "/tags/:id" do
   @total_spend = Tag.total_spend(params[:id])
   @tag = Tag.find(params[:id])
+  @count = Transaction.count_tags(params[:id])
   erb :"tags/show"
 end
 
