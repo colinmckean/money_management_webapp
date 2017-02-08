@@ -1,9 +1,13 @@
 <h1>Merchant Details</h1>
-<p>Total spend: <%= @total_spend %></p>
 <div class="container">
-<p>Merchant name: <%= @merchant.merchant_name %></p>
-<p class="button"><a href="/merchants/<%= @merchant.id%>/edit">EDIT</a></p>
+<div class="cell">
+<p><strong><%= @merchant.merchant_name %> - £</strong><%=sprintf '%.2f', @total_spend %></p>
+</div>
+<a href="/merchants/<%= @merchant.id%>/edit"><button class="edit_button button">EDIT</button></a>
+<% if @count == 0 %>
 <form action="/merchants/<%=@merchant.id%>/delete" method="post">
-<button class="delete button" type="submit" value="DELETE">DELETE</button>
+<button class="delete_button button" type="submit" value="DELETE">DELETE</button>
 </form>
+<% end %>
+
 </div>
