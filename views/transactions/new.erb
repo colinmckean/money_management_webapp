@@ -1,29 +1,36 @@
-<h1>NEW Transaction</h1>
-<div class="container">
+<a name="new_trans"><h1>NEW Transaction</h1></a>
+<div class="container container_large">
 <form action="/transactions/new" method="post">
-  <label>
-    amount:
-  <input type="text" name="transaction_amount">
-  </label>
-  <label>
-    details:
-  <input type="text" name="item_description">
-  </label>
-  <label>
-    Select a tag
-  <select name="tag_id">
+<div class="form">
+  <span class="form-item">Amount</span>
+  <input class="form-field" name="transaction_amount">
+</div>
+<div class="form">
+  <span class="form-item">Details</span>
+  <input class="form-field" name="item_description">
+</div>
+<div class="form">
+<span class="form-item">Tag</span>
+  <select class="form-field" name="tag_id">
   <% for tag in @tags %>
-    <option value="<%= tag.id%>"><%= tag.tag_name%></option>
+    <option value="<%= tag.id%>"><%= tag.tag_name %></option>
     <% end %>
-  </select> 
-  </label> 
-  <label>
-  select a merchant
-  <select name="merchant_id">
+  </select>
+  </div> 
+  <div class="form">
+  <span class="form-item">Merchant</span>
+  <select class="form-field" name="merchant_id">
   <% for merchant in @merchants %>
     <option value="<%= merchant.id%>"><%= merchant.merchant_name%></option>
     <% end %>
   </select>
-  </label>
-  <button class="button" type="submit" value="something">SUBMIT</button>
+  </div>
+  <div class="form">
+  <span class="form-item">Date:</span>
+  <input class="form-field" type="date" name="transaction_date" min="2000-01-02"
+  value="2017-02-10" ><br>
+  </div>
+  <button class="submit_button button" type="submit" value="something">SUBMIT</button>
   </form>
+
+  </div>
