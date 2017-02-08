@@ -1,10 +1,10 @@
 <h1>Edit tag Order</h1>
 <div class="container">
 <form action="/tags/<%= @tag.id %>" method="post">
- <label>
- Tag Name
-   <input type="text" name="tag_name" value="<%= @tag.tag_name() %>" >
- </label>
+ <div class="form">
+   <span class="form-item">Tag: </span>
+     <input type="text" name="tag_name" value="<%= @tag.tag_name() %>" >
+     </div>
   <button class="button update" type='submit' value="Update">UPDATE</button>
  </form>
  </label>
