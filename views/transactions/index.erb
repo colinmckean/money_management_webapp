@@ -1,14 +1,20 @@
 <h1>List all Transactions.</h1>
-<div>
-  Total Spend: <%= @total_spend %>
+
+<div class="container container_large">
+<div><h1></h1></div>
+  <p  class="add_new" >
+    <a href="/transactions/new">
+      Add new transaction</a></p>
+
+      <% for transaction in @transactions %>
+      <a href="/transactions/<%= transaction.id%>">
+       <div class="cell cell_large">
+         <p>    <strong> <%= transaction.nice_date %>:  -</strong>  £<%= sprintf '%.2f',transaction.transaction_amount %></p>
+       </div>
+     </a>
+     <%end%>
+     <% unless @total_by_month == nil %>
+     <li class="month_spend"><strong>Total Spend</strong> -£<%= @total_by_month %></li>
+     <% end %>
 </div>
-<div class="container">
- <% for transaction in @transactions %>
- <a href="/transactions/<%= transaction.id%>">
- <div class="cell">
- <p>ID: <%= transaction.id %></p>
- <p>transaction Amount: <%= transaction.transaction_amount %></p>
- </div>
- </a>
-<%end%>
-</div>
+
