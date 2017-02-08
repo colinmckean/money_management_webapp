@@ -1,10 +1,10 @@
 <h1>Edit merchant</h1>
 <div class="container">
 <form action="/merchants/<%= @merchant.id %>" method="post">
- <label>
- merchant Name
+<div class="form">
+  <span class="form-item">Merchant:</span>
    <input type="text" name="merchant_name" value="<%= @merchant.merchant_name() %>" >
- </label>
+ </div>
   <button class="button update" type='submit' value="Update">UPDATE</button>
  </form>
  </label>
