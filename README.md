@@ -8,3 +8,5 @@ psql -d moneycashboard -f db/moneycashboard.sql
 
 seed database with data:
 ruby db/seeds.rb
+
+oh and ruby app.rb runs the app.
