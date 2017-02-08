@@ -6,5 +6,5 @@ moneycashboard
 add tables to database:
 psql -d moneycashboard -f db/moneycashboard.sql
 
-seed database with data.
+seed database with data:
 ruby db/seeds.rb
