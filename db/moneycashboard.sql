@@ -17,5 +17,6 @@ id SERIAL8 primary key,
 tag_id INT4 references tags(id),
 merchant_id INT4 references merchants(id),
 transaction_amount REAL,
-item_description TEXT
+item_description TEXT,
+transaction_date DATE
 );
