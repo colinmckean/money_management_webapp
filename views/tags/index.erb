@@ -1,11 +1,10 @@
-<h1>View all tags</h1>
-
+<h1>Manage Tags</h1>
 <div class="container">
+<p class="add_new"><a href="/tags/new">Add new Tags</a></p>
  <% for tag in @tags %>
  <a href="/tags/<%= tag.id%>">
  <div class="cell">
- <p>ID: <%= tag.id %></p>
- <p>TAG NAME <%= tag.tag_name %></p>
+ <p><%= tag.tag_name %></p>
  </div>
  </a>
 <%end%>
