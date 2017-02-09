@@ -23,9 +23,9 @@ class Tag
   end
   
   def self.update(options)
-    sql = ("UPDATE tags SET
-      tag_name='#{options['tag_name']}'
-      WHERE id='#{options['id']}';")
+    sql = ("UPDATE tags 
+            SET tag_name='#{options['tag_name']}'
+            WHERE id='#{options['id']}';")
     SqlRunner.run(sql)
   end
 
@@ -37,12 +37,14 @@ class Tag
   end
 
   def self.all()
-    sql = ("SELECT * FROM tags;")
+    sql = ("SELECT * 
+            FROM tags;")
     SqlRunner.run(sql).map {|tag|Tag.new(tag)}
   end
 
   def self.find(id)
-    sql = ("SELECT * FROM tags
+    sql = ("SELECT * 
+            FROM tags
             WHERE id = '#{id}';")
     Tag.new(SqlRunner.run(sql)[0])
   end
