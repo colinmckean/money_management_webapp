@@ -7,37 +7,37 @@ require_relative '../models/Transaction'
 
 get '/tags/all' do
   @tags = Tag.all()
-  erb :"/tags/index"
+  erb :'/tags/index'
 end
 
 get '/tags/new' do
-  erb :"tags/new"
+  erb :'tags/new'
 end
 
 post '/tags/new' do
   @tag = Tag.new(params)
   @tag.save
-  redirect to("/tags/all")
+  redirect to '/tags/all'
 end
 
-get "/tags/:id" do
+get '/tags/:id' do
   @total_spend = Tag.total_spend(params[:id])
   @tag = Tag.find(params[:id])
   @count = Transaction.count_tags(params[:id])
-  erb :"tags/show"
+  erb :'tags/show'
 end
 
 get '/tags/:id/edit' do
   @tag = Tag.find(params[:id])
-  erb :"tags/edit"
+  erb :'tags/edit'
 end
 
-post "/tags/:id" do
+post '/tags/:id' do
   @tag = Tag.update(params)
-  redirect to ("/tags/#{params[:id]}")
+  redirect to "/tags/#{params[:id]}"
 end
 
-post "/tags/:id/delete" do
+post '/tags/:id/delete' do
   Tag.delete(params[:id])
-  redirect to('/tags/all')
+  redirect to '/tags/all'
 end
