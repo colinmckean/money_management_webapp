@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/styles/styles.css">
   <title></title>
 </head>
 <body>
-<div class="master">
-<div class="logo" >
-<a href="/">
-<img src="/img/logo.png">
-</a>
-</div>
-<nav>
-<ul>
-<li class="new_transaction_link"><a href="/transactions/new#new_trans">New Transaction</a></li>
-<li class="all_tags_link"><a href="/tags/all">Manage Tags</a></li>
-<li class="all_transactions_link"><a href="/transactions/all">Manage Transactions</a></li>
-<li class="all_merchants_link"><a href="/merchants/all">Manage Merchants</a></li>
-</ul></nav>
-</div>
-<%= yield %>
-</body>
-</html>
+  <div class="master">
+    <div class="logo" >
+      <a href="/">
+        <img src="/img/logo.png">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li class="new_transaction_link"><a href="/transactions/new#new_trans">New Transaction</a></li>
+        <li class="all_transactions_link"><a href="/transactions/all">Manage Transactions</a></li>
+        <li class="all_tags_link"><a href="/tags/all">Manage Tags</a></li>
+        <li class="all_merchants_link"><a href="/merchants/all">Manage Merchants</a></li>
+      </ul></nav>
+    </div>
+    <%= yield %>
+  </body>
+  </html>
